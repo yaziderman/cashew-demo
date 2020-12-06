@@ -1,0 +1,40 @@
+server:
+  port: 9191
+
+spring:
+  application:
+    name: GATEWAY-SERVICE
+  cloud:
+    config:
+      enabled: true
+      uri: http://localhost:9296
+      fail-fast: true
+
+# Increase the Hystrix timeout to 60s (globally)
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 60000
+
+zuul:
+  ignoredServices: "*"
+  sensitive-headers: Cookie,Set-Cookie
+  routes:
+    auth-service:
+      path: /auth/**
+      serviceId: AUTH-SERVICE
+      strip-prefix: false
+    user-service:
+      path: /users/**
+      serviceId: USER-SERVICE
+      url: http://localhost:9002
+      strip-prefix: false
+
+    department-service:
+      path: /departments/**
+      serviceId: DEPARTMENT-SERVICE
+      url: http://localhost:9003
+      strip-prefix: false
