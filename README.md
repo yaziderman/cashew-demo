@@ -25,8 +25,11 @@ As an example, Employees Onboarding has the following contexts:
 - ID scan
 - Data collection
 
+A Diagram is available [here](https://github.com/yaziderman/cashew-demo/blob/master/DDD%20Documentation.pdf)
+
 ### Relationships Between Contexts
 
+A Diagram is available [here](https://github.com/yaziderman/cashew-demo/blob/master/DDD%20Documentation.pdf)
 
 #### glossary of terms
 
@@ -38,3 +41,5 @@ The amount paid until today
 Accrued: 
 The total amount due to the employee, whether paid or not.
 ```
+
+Full Documentation with diagrams can be found [here](https://github.com/yaziderman/cashew-demo/blob/master/DDD%20Documentation.pdf)
